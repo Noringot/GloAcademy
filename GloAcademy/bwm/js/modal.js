@@ -1,6 +1,6 @@
 // Modal
 const modalWin = document.querySelector('.modal');
-const moreBtn = document.querySelector('.more');
+const moreBtn = document.querySelectorAll('.more');
 const modalCloseEl = document.querySelector('.modal__close');
 const modalForm = document.querySelector('.modal__form');
 
@@ -20,7 +20,7 @@ function modalCloseKeydown(event) {
 	}
 }
 
-moreBtn.addEventListener('click', openModal);
+moreBtn.forEach( item => item.addEventListener('click', openModal));
 modalCloseEl.addEventListener('click', closeModal);
 modalWin.addEventListener('click', event => {
 	if (event.target.classList.contains('overlay')){
